@@ -1,0 +1,186 @@
+.departments-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+.departments-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+}
+
+/* Imagem centralizada */
+.departments-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  position: relative;
+  margin-bottom: var(--space-2xl);
+}
+
+.center-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.center-content {
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.center-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.exata-360-image {
+  /* COORDENADAS PARA AJUSTE DE TAMANHO */
+  /* Para aumentar/diminuir o tamanho, ajuste estas propriedades: */
+  width: 400px;        /* Largura da imagem */
+  height: 400px;       /* Altura da imagem */
+  max-width: 500px;    /* Largura máxima */
+  max-height: 500px;   /* Altura máxima */
+  
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.4));
+  transition: all var(--transition-normal);
+  animation: float 6s ease-in-out infinite;
+}
+
+.exata-360-image:hover {
+  filter: drop-shadow(0 0 40px rgba(0, 255, 136, 0.6));
+  transform: scale(1.05);
+  animation-play-state: paused;
+}
+
+.exata-360-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--glass-bg);
+  border: 2px dashed var(--color-accent);
+  border-radius: var(--radius-lg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  width: 400px;
+  height: 400px;
+  max-width: 500px;
+  max-height: 500px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.placeholder-text {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-sm);
+}
+
+.placeholder-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .exata-360-image {
+    width: 350px;
+    height: 350px;
+    max-width: 400px;
+    max-height: 400px;
+  }
+  
+  .exata-360-placeholder {
+    width: 350px;
+    height: 350px;
+    max-width: 400px;
+    max-height: 400px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .exata-360-image {
+    width: 300px;
+    height: 300px;
+    max-width: 350px;
+    max-height: 350px;
+  }
+  
+  .exata-360-placeholder {
+    width: 300px;
+    height: 300px;
+    max-width: 350px;
+    max-height: 350px;
+  }
+  
+  .placeholder-text {
+    font-size: var(--font-size-xl);
+  }
+  
+  .placeholder-subtitle {
+    font-size: var(--font-size-xs);
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .exata-360-image {
+    width: 250px;
+    height: 250px;
+    max-width: 300px;
+    max-height: 300px;
+  }
+  
+  .exata-360-placeholder {
+    width: 250px;
+    height: 250px;
+    max-width: 300px;
+    max-height: 300px;
+    padding: var(--space-md);
+  }
+  
+  .placeholder-text {
+    font-size: var(--font-size-lg);
+  }
+  
+  .placeholder-subtitle {
+    font-size: 0.6rem;
+  }
+  
+}
+
+/* Animação de entrada da imagem */
+.center-image {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

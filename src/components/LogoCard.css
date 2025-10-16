@@ -1,0 +1,112 @@
+.logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.logo-card__container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.logo-card__image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: brightness(0.9) contrast(1.1);
+  transition: all var(--transition-normal);
+}
+
+.logo-card__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.1) 0%,
+    rgba(26, 61, 47, 0.3) 100%
+  );
+}
+
+.logo-card__placeholder-text {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.logo-card__name {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Hover effects */
+.logo-card:hover .logo-card__container {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--color-accent);
+}
+
+.logo-card:hover .logo-card__image {
+  filter: brightness(1.1) contrast(1.2);
+}
+
+.logo-card:hover .logo-card__name {
+  color: var(--color-text-primary);
+}
+
+/* Focus states */
+.logo-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .logo-card__container {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .logo-card__placeholder-text {
+    font-size: var(--font-size-lg);
+  }
+  
+  .logo-card__name {
+    font-size: 0.7rem;
+    max-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-card__container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .logo-card__placeholder-text {
+    font-size: var(--font-size-base);
+  }
+}

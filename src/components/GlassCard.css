@@ -1,0 +1,78 @@
+.glass-card {
+  position: relative;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  box-shadow: var(--glass-shadow);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.glass-card__content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-lg);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.glass-card__shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left var(--transition-slow);
+  z-index: 1;
+}
+
+.glass-card--hover:hover {
+  transform: translateY(-8px) rotateX(5deg);
+  box-shadow: var(--shadow-strong), var(--shadow-glow);
+  border-color: rgba(0, 255, 136, 0.3);
+}
+
+.glass-card--hover:hover .glass-card__shimmer {
+  left: 100%;
+}
+
+.glass-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Variações de tamanho */
+.glass-card--small {
+  min-height: 120px;
+}
+
+.glass-card--medium {
+  min-height: 180px;
+}
+
+.glass-card--large {
+  min-height: 240px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .glass-card__content {
+    padding: var(--space-md);
+  }
+  
+  .glass-card--hover:hover {
+    transform: translateY(-4px);
+  }
+}

@@ -1,0 +1,133 @@
+.exata-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exata-logo__container {
+  position: relative;
+  border: 3px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 136, 0.3),
+    inset 0 0 20px rgba(0, 255, 136, 0.1);
+}
+
+.exata-logo__text {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.letter {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  line-height: 1;
+  position: relative;
+}
+
+/* Tamanhos */
+.exata-logo--small .exata-logo__container {
+  padding: var(--space-xs);
+  border-width: 2px;
+}
+
+.exata-logo--small .letter {
+  font-size: 1.2rem;
+}
+
+.exata-logo--medium .exata-logo__container {
+  padding: var(--space-sm);
+  border-width: 2px;
+}
+
+.exata-logo--medium .letter {
+  font-size: 1.8rem;
+}
+
+.exata-logo--large .exata-logo__container {
+  padding: var(--space-md);
+  border-width: 3px;
+}
+
+.exata-logo--large .letter {
+  font-size: 2.5rem;
+}
+
+.exata-logo--xlarge .exata-logo__container {
+  padding: var(--space-lg);
+  border-width: 4px;
+}
+
+.exata-logo--xlarge .letter {
+  font-size: 3.5rem;
+}
+
+/* Estilos específicos das letras */
+.letter--e {
+  /* E blocky e arredondado */
+}
+
+.letter--x {
+  /* X com linhas diagonais grossas */
+  transform: scaleX(1.1);
+}
+
+.letter--a1,
+.letter--a2 {
+  /* A estilizado sem barra horizontal */
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  width: 0.8em;
+  height: 1em;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+.letter--t {
+  /* T simples e blocky */
+}
+
+/* Efeitos de hover */
+.exata-logo:hover .exata-logo__container {
+  box-shadow: 
+    0 0 30px rgba(0, 255, 136, 0.5),
+    inset 0 0 30px rgba(0, 255, 136, 0.2);
+  transform: scale(1.02);
+}
+
+.exata-logo:hover .letter {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .exata-logo--xlarge .letter {
+    font-size: 2.5rem;
+  }
+  
+  .exata-logo--large .letter {
+    font-size: 2rem;
+  }
+  
+  .exata-logo--medium .letter {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .exata-logo--xlarge .letter {
+    font-size: 2rem;
+  }
+  
+  .exata-logo--large .letter {
+    font-size: 1.8rem;
+  }
+  
+  .exata-logo--medium .letter {
+    font-size: 1.2rem;
+  }
+}

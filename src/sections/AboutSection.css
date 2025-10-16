@@ -1,0 +1,236 @@
+.about-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: var(--space-3xl) 0;
+  overflow: hidden;
+}
+
+.about-section__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Background removido para usar o global */
+  z-index: 1;
+}
+
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 136, 0.05) 0%,
+    transparent 70%
+  );
+}
+
+.about-section__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.about-section__card {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.about-card {
+  min-height: 500px;
+  padding: var(--space-2xl);
+}
+
+.about-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  height: 100%;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.value-item {
+  text-align: center;
+  padding: var(--space-lg);
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.value-item__icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+  filter: drop-shadow(0 0 15px rgba(0, 255, 136, 0.5));
+}
+
+.value-item__title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.value-item__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 500;
+}
+
+.about-actions {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  margin-top: auto;
+}
+
+.about-button {
+  padding: var(--space-md) var(--space-xl);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  min-width: 160px;
+}
+
+.about-button--primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-accent-dark) 100%
+  );
+  color: var(--color-primary-dark);
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+}
+
+.about-button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.5);
+}
+
+.about-button--secondary {
+  background: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.about-button--secondary:hover {
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3);
+}
+
+.about-button:active {
+  transform: translateY(0);
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .value-item {
+    padding: var(--space-md);
+  }
+  
+  .about-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    padding: var(--space-lg);
+    min-height: 400px;
+  }
+  
+  .value-item__icon {
+    font-size: 2.5rem;
+  }
+  
+  .value-item__title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .value-item__description {
+    font-size: var(--font-size-sm);
+  }
+  
+  .about-button {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-card {
+    padding: var(--space-md);
+  }
+  
+  .value-item {
+    padding: var(--space-sm);
+  }
+  
+  .value-item__icon {
+    font-size: 2rem;
+  }
+  
+  .value-item__title {
+    font-size: var(--font-size-base);
+  }
+  
+  .value-item__description {
+    font-size: var(--font-size-xs);
+  }
+  
+  .about-button {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-xs);
+    min-width: 140px;
+  }
+}
+
+/* Efeito parallax reduzido em mobile */
+@media (max-width: 768px) {
+  .about-section__background {
+    background-attachment: scroll;
+  }
+}

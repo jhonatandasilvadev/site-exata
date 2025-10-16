@@ -1,0 +1,172 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 26, 46, 0.9) 0%,
+    rgba(22, 33, 62, 0.9) 25%,
+    rgba(30, 58, 95, 0.9) 50%,
+    rgba(45, 90, 135, 0.9) 75%,
+    rgba(26, 75, 115, 0.9) 100%
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(135, 206, 235, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 30px rgba(0, 255, 136, 0.3);
+  border-color: rgba(0, 255, 136, 0.5);
+}
+
+.vortex-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vortex-ring {
+  position: absolute;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  animation: vortexSpin 3s linear infinite;
+}
+
+.vortex-ring-1 {
+  width: 40px;
+  height: 40px;
+  border-top-color: rgba(0, 255, 136, 0.6);
+  animation-duration: 2s;
+}
+
+.vortex-ring-2 {
+  width: 50px;
+  height: 50px;
+  border-right-color: rgba(135, 206, 235, 0.4);
+  animation-duration: 2.5s;
+  animation-direction: reverse;
+}
+
+.vortex-ring-3 {
+  width: 60px;
+  height: 60px;
+  border-bottom-color: rgba(100, 149, 237, 0.3);
+  animation-duration: 3s;
+}
+
+.vortex-center {
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover .vortex-center {
+  color: var(--color-accent);
+  transform: scale(1.1);
+}
+
+.scroll-to-top:hover .vortex-ring-1 {
+  border-top-color: var(--color-accent);
+  animation-duration: 1.5s;
+}
+
+.scroll-to-top:hover .vortex-ring-2 {
+  border-right-color: var(--color-accent);
+  animation-duration: 2s;
+}
+
+.scroll-to-top:hover .vortex-ring-3 {
+  border-bottom-color: var(--color-accent);
+  animation-duration: 2.5s;
+}
+
+@keyframes vortexSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .vortex-ring-1 {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .vortex-ring-2 {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .vortex-ring-3 {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .vortex-center svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .vortex-ring-1 {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .vortex-ring-2 {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .vortex-ring-3 {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .vortex-center svg {
+    width: 14px;
+    height: 14px;
+  }
+}

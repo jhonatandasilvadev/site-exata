@@ -10,7 +10,7 @@ const AreasSection = () => {
     { name: 'Atacados', icon: '📦' },
     { name: 'Congressos', icon: '🏛️' },
     { name: 'Feiras de Eventos', icon: '🎪' },
-    { name: 'Prefeituras', icon: '🏛️' },
+    { name: 'Municípios e Prefeituras', icon: '🏛️', link: 'municipios.html' },
     { name: 'ACE', icon: '🤝' },
     { name: 'CDL', icon: '💼' },
     { name: 'Farmácias', icon: '💊' }
@@ -42,17 +42,37 @@ const AreasSection = () => {
                     animationDelay: `${index * 0.3}s`
                   }}
                 >
-                  <GlassCard 
-                    className="ecg-card"
-                    hover={true}
-                  >
-                    <div className="ecg-card__icon">
-                      {area.icon}
-                    </div>
-                    <h3 className="ecg-card__name">
-                      {area.name}
-                    </h3>
-                  </GlassCard>
+                  {area.link ? (
+                    <a 
+                      href={area.link} 
+                      className="ecg-card-link"
+                      title={`Clique para acessar ${area.name}`}
+                    >
+                      <GlassCard 
+                        className="ecg-card"
+                        hover={true}
+                      >
+                        <div className="ecg-card__icon">
+                          {area.icon}
+                        </div>
+                        <h3 className="ecg-card__name">
+                          {area.name}
+                        </h3>
+                      </GlassCard>
+                    </a>
+                  ) : (
+                    <GlassCard 
+                      className="ecg-card"
+                      hover={true}
+                    >
+                      <div className="ecg-card__icon">
+                        {area.icon}
+                      </div>
+                      <h3 className="ecg-card__name">
+                        {area.name}
+                      </h3>
+                    </GlassCard>
+                  )}
                 </div>
               ))}
             </div>

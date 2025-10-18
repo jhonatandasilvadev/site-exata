@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/site-exatasis/',
   server: {
+    host: '0.0.0.0', // Permite acesso externo
     port: 3000,
     open: true
   },

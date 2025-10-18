@@ -1,6 +1,7 @@
 import React from 'react';
 import GlassCard from '../components/GlassCard';
 import SectionTitle from '../components/SectionTitle';
+import teamImage from '../assets/images/equipe-exata.jpeg';
 import './AboutSection.css';
 
 const AboutSection = () => {
@@ -57,6 +58,19 @@ const AboutSection = () => {
                       </p>
                     </div>
                   ))}
+                </div>
+                
+                <div className="team-image-container">
+                  <img 
+                    src={teamImage} 
+                    alt="Equipe Exata" 
+                    className="team-image"
+                    onError={(e) => {
+                      console.log('Erro ao carregar imagem:', e.target.src);
+                      e.target.style.display = 'none';
+                    }}
+                    onLoad={() => console.log('Imagem carregada com sucesso!')}
+                  />
                 </div>
                 
                 <div className="about-actions">

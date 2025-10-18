@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionTitle from '../components/SectionTitle';
+import exata360Image from '../assets/images/exata-360.png';
 import './DepartmentsSection.css';
 
 const DepartmentsSection = () => {
@@ -19,7 +20,7 @@ const DepartmentsSection = () => {
             <div className="center-container">
               <div className="center-image">
                 <img 
-                  src="/src/assets/images/exata-360.png" 
+                  src={exata360Image} 
                   alt="EXATA 360°" 
                   className="exata-360-image"
                   onError={(e) => {

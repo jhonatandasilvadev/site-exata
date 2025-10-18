@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import './ExataImage.css';
 
+// Importar as imagens
+import mainLogo from '../assets/images/exata-main-logo.png';
+import headLogo from '../assets/images/exata-head-logo.png';
+import footerLogo from '../assets/images/exata-footer-logo.png';
+
 const ExataImage = ({ 
   type = 'main', 
   size = 'large', 
@@ -10,14 +15,14 @@ const ExataImage = ({
 }) => {
   const [imageError, setImageError] = useState(false);
   
-  // Mapeamento de tipos para nomes de arquivo
+  // Mapeamento de tipos para imports
   const imageMap = {
-    main: 'exata-main-logo',
-    head: 'exata-head-logo', 
-    footer: 'exata-footer-logo'
+    main: mainLogo,
+    head: headLogo, 
+    footer: footerLogo
   };
   
-  const imageName = imageMap[type] || 'exata-main-logo';
+  const imageSrc = imageMap[type] || mainLogo;
   
   // Tentar carregar a imagem
   const handleImageError = () => {
@@ -45,7 +50,7 @@ const ExataImage = ({
   return (
     <div className={`exata-image exata-image--${size} ${className}`} {...props}>
       <img
-        src={`/src/assets/images/${imageName}.png`}
+        src={imageSrc}
         alt={`Logo EXATA ${type}`}
         onError={handleImageError}
         className="exata-image__img"

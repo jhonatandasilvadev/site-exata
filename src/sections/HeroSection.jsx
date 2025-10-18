@@ -5,55 +5,113 @@ import './HeroSection.css';
 
 const HeroSection = () => {
   const services = [
-    'Sorteios e Prêmios',
-    'Clube de Vantagens', 
-    'Assessoria Jurídica',
-    'Municípios e Prefeituras',
-    'Cash Back',
-    'Gameficação',
-    'Campanha de Pontos',
-    'Personalização de Campanhas'
+    { name: 'Sorteios e Prêmios', link: null },
+    { name: 'Clube de Vantagens', link: null }, 
+    { name: 'Assessoria Jurídica', link: null },
+    { name: 'Municípios e Prefeituras', link: 'municipios.html' },
+    { name: 'Cash Back', link: null },
+    { name: 'Gameficação', link: null },
+    { name: 'Campanha de Pontos', link: null },
+    { name: 'Personalização de Campanhas', link: null }
   ];
 
-  const getServiceIcon = (service) => {
+  const getServiceIcon = (serviceName) => {
+    if (serviceName === 'Cash Back') {
+      return (
+        <img 
+          src="/site-exatasis/cash-back.png" 
+          alt="Cash Back" 
+          className="service-icon-image"
+        />
+      );
+    }
+    
+    if (serviceName === 'Sorteios e Prêmios') {
+      return (
+        <img 
+          src="/site-exatasis/premios-sorteios.png" 
+          alt="Sorteios e Prêmios" 
+          className="service-icon-image"
+        />
+      );
+    }
+    
+    if (serviceName === 'Gameficação') {
+      return (
+        <img 
+          src="/site-exatasis/gamefication.png" 
+          alt="Gameficação" 
+          className="service-icon-image"
+        />
+      );
+    }
+    
+    if (serviceName === 'Personalização de Campanhas') {
+      return (
+        <img 
+          src="/site-exatasis/custom-campain.png" 
+          alt="Personalização de Campanhas" 
+          className="service-icon-image"
+        />
+      );
+    }
+    
     const icons = {
-      'Sorteios e Prêmios': '🎁',
       'Clube de Vantagens': '⭐',
       'Assessoria Jurídica': '⚖️',
       'Municípios e Prefeituras': '🏛️',
-      'Cash Back': '💰',
-      'Gameficação': '🎮',
-      'Campanha de Pontos': '📊',
-      'Personalização de Campanhas': '🎨'
+      'Campanha de Pontos': '📊'
     };
-    return icons[service] || '✨';
+    return icons[serviceName] || '✨';
   };
 
   return (
     <section id="hero" className="hero-section">
       <div className="container">
         <div className="hero-section__content">
-          {/* Coluna esquerda - Logo */}
+          {/* Logo centralizada */}
           <div className="hero-section__logo">
             <ExataImage type="main" size="xlarge" />
           </div>
 
-          {/* Coluna direita - Grid de serviços */}
+          {/* Grid de serviços centralizado */}
           <div className="hero-section__services">
             <div className="services-grid">
               {services.map((service, index) => (
-                <GlassCard 
-                  key={index}
-                  className="service-card"
-                  hover={true}
-                >
-                  <div className="service-card__icon">
-                    {getServiceIcon(service)}
+                service.link ? (
+                  <a 
+                    key={index}
+                    href={service.link}
+                    className="service-card-link"
+                    title={`Clique para acessar ${service.name}`}
+                  >
+                    <div className="service-card">
+                      <div className="service-card-front">
+                        <div className="service-card__icon">
+                          {getServiceIcon(service.name)}
+                        </div>
+                      </div>
+                      <div className="service-card-back">
+                        <h3 className="service-card__title">
+                          {service.name}
+                        </h3>
+                      </div>
+                    </div>
+                  </a>
+                ) : (
+                  <div key={index} className="service-card">
+                    <div className="service-card-front">
+                      <div className="service-card__icon">
+                        {getServiceIcon(service.name)}
+                      </div>
+                    </div>
+                    <div className="service-card-back">
+                      <h3 className="service-card__title">
+                        {service.name}
+                      </h3>
+                    </div>
                   </div>
-                  <h3 className="service-card__title">
-                    {service}
-                  </h3>
-                </GlassCard>
+                )
               ))}
             </div>
           </div>

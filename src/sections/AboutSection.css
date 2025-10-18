@@ -94,6 +94,27 @@
   font-weight: 500;
 }
 
+.team-image-container {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-xl) 0;
+}
+
+.team-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  border: 2px solid rgba(0, 255, 136, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.team-image:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-strong);
+  border-color: rgba(0, 255, 136, 0.4);
+}
+
 .about-actions {
   display: flex;
   gap: var(--space-lg);

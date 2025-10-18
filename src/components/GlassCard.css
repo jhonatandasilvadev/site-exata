@@ -36,6 +36,7 @@
   );
   transition: left var(--transition-slow);
   z-index: 1;
+  pointer-events: none;
 }
 
 .glass-card--hover:hover {

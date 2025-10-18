@@ -37,12 +37,19 @@ const Header = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ 
+      top: 0, 
+      behavior: 'smooth' 
+    });
+  };
+
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'areas', label: 'Sorteios' },
-    { id: 'clients', label: 'Clubes' },
+    { id: 'hero', label: 'Serviços' },
+    { id: 'areas', label: 'Áreas' },
+    { id: 'clients', label: 'Clientes' },
     { id: 'departments', label: 'Estrutura' },
-    { id: 'about', label: 'Prefeituras' }
+    { id: 'about', label: 'Sobre' }
   ];
 
   return (
@@ -50,7 +57,7 @@ const Header = () => {
       <div className="container">
         <div className="header__content">
           {/* Logo */}
-          <div className="header__logo" onClick={() => scrollToSection('hero')}>
+          <div className="header__logo" onClick={scrollToTop}>
             <ExataImage type="head" size="small" />
           </div>
 
@@ -74,7 +81,7 @@ const Header = () => {
           {/* Botão de contato */}
           <div className="header__actions">
             <button className="contact-button">
-              <span className="button-text">ATENDIMENTO RÁPIDO</span>
+              <span className="button-text">FALE CONOSCO</span>
               <span className="whatsapp-icon">📱</span>
             </button>
           </div>

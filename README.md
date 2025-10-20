@@ -3,7 +3,7 @@
 Um site one-page moderno e responsivo desenvolvido em React com Vite, focado em glassmorphism e efeitos visuais metálicos verdes.
 
 ## 🚀 Características
-
+tudo aqui
 - **Design Moderno**: Estética glassmorphism com verde metálico escuro (#1a3d2f)
 - **Totalmente Responsivo**: Mobile-first com breakpoints otimizados
 - **Componentizado**: Arquitetura React modular e reutilizável

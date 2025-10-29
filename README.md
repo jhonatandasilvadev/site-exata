@@ -85,34 +85,317 @@ src/
 ## 🚀 Como Executar
 
 ### Pré-requisitos
-- Node.js 16+ 
-- npm ou yarn
+- **Node.js 16+** (versão recomendada: 20.16.0)
+- **npm 8+** (versão recomendada: 10.8.1)
+- Terminal PowerShell (Windows) ou Bash (Linux/Mac)
 
-### Instalação
+### Instalação e Execução
+
 ```bash
-# Clone o repositório
-git clone <url-do-repositorio>
-cd site-exatasis
+# 1. Navegue até o diretório do projeto
+cd "C:\Users\EXATAPC\Desktop\Exata Jhonatan\site-exatasis"
 
-# Instale as dependências
+# 2. Instale as dependências (apenas na primeira vez)
 npm install
 
-# Execute em modo desenvolvimento
+# 3. Execute o servidor de desenvolvimento
 npm run dev
 
-# Build para produção
-npm run build
-
-# Preview do build
-npm run preview
+# 4. Abra o navegador em: http://localhost:3000
 ```
 
 ### Scripts Disponíveis
 
-- `npm run dev` - Servidor de desenvolvimento
-- `npm run build` - Build de produção
-- `npm run preview` - Preview do build
-- `npm run lint` - Linting do código
+- `npm run dev` - Servidor de desenvolvimento (porta 3000)
+- `npm run build` - Build de produção (pasta dist/)
+- `npm run preview` - Preview do build de produção
+- `npm run lint` - Linting do código (se configurado)
+
+### Configuração do Vite (vite.config.js)
+
+```javascript
+{
+  server: {
+    host: true,        // Permite acesso via rede local
+    port: 3000,        // Porta do servidor
+    open: true         // Abre navegador automaticamente
+  }
+}
+```
+
+## 🔧 Troubleshooting
+
+### ❌ Problema: "npm error Missing script: dev"
+
+**Causas:**
+- Terminal não está no diretório correto do projeto
+- Arquivo `package.json` não foi encontrado
+
+**Solução:**
+```bash
+# 1. Confirme que está no diretório correto
+Get-Location  # PowerShell
+# ou
+pwd           # Bash
+
+# 2. O caminho deve terminar em: \site-exatasis
+
+# 3. Verifique se package.json existe
+Test-Path package.json  # PowerShell (deve retornar True)
+# ou
+ls package.json         # Bash
+
+# 4. Se o caminho estiver errado, navegue para o correto:
+cd "C:\Users\EXATAPC\Desktop\Exata Jhonatan\site-exatasis"
+
+# 5. Execute novamente
+npm run dev
+```
+
+### ❌ Problema: Porta 3000 já está em uso
+
+**Solução:**
+```bash
+# Windows PowerShell - encerrar processo na porta 3000
+Get-Process -Id (Get-NetTCPConnection -LocalPort 3000).OwningProcess | Stop-Process -Force
+
+# Ou altere a porta no vite.config.js:
+# server: { port: 3001 }
+```
+
+### ❌ Problema: Dependências não instaladas ou desatualizadas
+
+**Solução:**
+```bash
+# Limpe o cache e reinstale
+rm -rf node_modules package-lock.json  # Bash
+# ou
+Remove-Item -Recurse -Force node_modules, package-lock.json  # PowerShell
+
+npm install
+npm run dev
+```
+
+### ❌ Problema: Navegador não abre automaticamente
+
+**Solução manual:**
+```bash
+# 1. Verifique se o servidor iniciou (deve aparecer no terminal):
+# "Local: http://localhost:3000"
+
+# 2. Abra manualmente no navegador:
+Start-Process http://localhost:3000  # PowerShell
+# ou
+open http://localhost:3000           # Mac
+# ou
+xdg-open http://localhost:3000       # Linux
+```
+
+### ✅ Checklist de Verificação Rápida
+
+1. ✅ **Node/NPM instalados?**
+   ```bash
+   node -v  # deve retornar v20.x ou superior
+   npm -v   # deve retornar 10.x ou superior
+   ```
+
+2. ✅ **Diretório correto?**
+   ```bash
+   Get-Location  # deve terminar em \site-exatasis
+   Test-Path package.json  # deve retornar True
+   ```
+
+3. ✅ **Dependências instaladas?**
+   ```bash
+   Test-Path node_modules  # deve retornar True
+   ```
+
+4. ✅ **Porta 3000 livre?**
+   ```bash
+   Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue
+   # Se retornar algo, a porta está ocupada
+   ```
+
+## 📂 Estrutura de Diretórios Completa
+
+```
+site-exatasis/
+├── 📁 dist/                    # Build de produção (gerado por npm run build)
+│   ├── assets/                 # JS e CSS otimizados
+│   ├── index.html              # HTML final minificado
+│   └── vite.svg                # Favicon
+│
+├── 📁 node_modules/            # Dependências (não commitadas)
+│
+├── 📁 public/                  # Arquivos estáticos servidos diretamente
+│   ├── *.html                  # Páginas HTML estáticas
+│   ├── *.png                   # Imagens públicas
+│   ├── *.css                   # Estilos de páginas estáticas
+│   └── vite.svg                # Favicon
+│
+├── 📁 src/                     # Código fonte React
+│   ├── 📁 assets/              # Assets importados no código
+│   │   └── images/             # Imagens do React
+│   │       ├── exata-360.png
+│   │       ├── exata-footer-logo.png
+│   │       ├── exata-head.png
+│   │       └── tudo-sorte-logo.png
+│   │
+│   ├── 📁 components/          # Componentes reutilizáveis
+│   │   ├── Bubble.jsx          # Bolha metálica animada
+│   │   ├── ExataImage.jsx      # Componente de imagem responsiva
+│   │   ├── ExataLogo.jsx       # Logo principal
+│   │   ├── Footer.jsx          # Rodapé com informações
+│   │   ├── GlassCard.jsx       # Card com efeito glassmorphism
+│   │   ├── Header.jsx          # Cabeçalho fixo com navegação
+│   │   ├── LogoCard.jsx        # Card para logos de clientes
+│   │   ├── ScrollToTop.jsx     # Botão voltar ao topo
+│   │   ├── SectionTitle.jsx    # Título com linha luminosa
+│   │   └── *.css               # Estilos correspondentes
+│   │
+│   ├── 📁 sections/            # Seções da página principal
+│   │   ├── AboutSection.jsx    # Seção Sobre Nós
+│   │   ├── AreasSection.jsx    # Áreas de Atuação
+│   │   ├── ClientsSection.jsx  # Grid de clientes
+│   │   ├── DepartmentsSection.jsx # Departamentos internos
+│   │   ├── HeroSection.jsx     # Seção inicial/hero
+│   │   └── *.css               # Estilos correspondentes
+│   │
+│   ├── 📁 styles/              # Estilos globais
+│   │   ├── globals.css         # Reset, utilitários, base
+│   │   └── tokens.css          # Design tokens (cores, fontes, etc.)
+│   │
+│   ├── App.jsx                 # Componente raiz React
+│   └── main.jsx                # Entry point React (ReactDOM.render)
+│
+├── 📄 index.html               # Template HTML principal (Vite)
+├── 📄 package.json             # Dependências e scripts NPM
+├── 📄 package-lock.json        # Lock file de dependências
+├── 📄 vite.config.js           # Configuração do Vite
+└── 📄 README.md                # Este arquivo
+
+```
+
+## 🗂️ Parâmetros e Configurações
+
+### package.json - Dependências
+
+```json
+{
+  "dependencies": {
+    "react": "^18.2.0",         // Biblioteca React
+    "react-dom": "^18.2.0"      // React DOM
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",  // Plugin Vite para React
+    "vite": "^5.0.8"                    // Build tool
+  }
+}
+```
+
+### vite.config.js - Configuração do Servidor
+
+```javascript
+{
+  plugins: [react()],           // Habilita suporte a React (JSX, Fast Refresh)
+  
+  server: {
+    host: true,                 // Permite acesso via IP da rede local
+    port: 3000,                 // Porta do servidor de desenvolvimento
+    open: true                  // Abre navegador automaticamente ao iniciar
+  },
+  
+  assetsInclude: [              // Tipos de assets reconhecidos
+    '**/*.png',
+    '**/*.jpg', 
+    '**/*.jpeg',
+    '**/*.gif',
+    '**/*.svg'
+  ]
+}
+```
+
+### index.html - Configuração HTML
+
+- **charset**: UTF-8
+- **viewport**: width=device-width, initial-scale=1.0
+- **lang**: pt-BR
+- **title**: TUDO SORTE - Exatasis
+- **favicon**: /vite.svg
+- **fonts**: Poppins (400, 500, 600, 700) do Google Fonts
+- **root div**: #root (onde React monta a aplicação)
+- **script**: ./src/main.jsx (entry point)
+
+### Tokens CSS (src/styles/tokens.css)
+
+```css
+--color-primary: #1a3d2f;      /* Verde metálico escuro */
+--color-accent: #00ff88;        /* Verde brilhante */
+--color-text: #ffffff;          /* Branco */
+--color-secondary: #b8c5c0;     /* Cinza claro */
+
+--spacing-xs: 0.5rem;           /* 8px */
+--spacing-sm: 1rem;             /* 16px */
+--spacing-md: 1.5rem;           /* 24px */
+--spacing-lg: 2rem;             /* 32px */
+--spacing-xl: 3rem;             /* 48px */
+--spacing-2xl: 4rem;            /* 64px */
+--spacing-3xl: 6rem;            /* 96px */
+
+--font-size-xs: 0.75rem;        /* 12px */
+--font-size-sm: 0.875rem;       /* 14px */
+--font-size-base: 1rem;         /* 16px */
+--font-size-lg: 1.125rem;       /* 18px */
+--font-size-xl: 1.25rem;        /* 20px */
+--font-size-2xl: 1.5rem;        /* 24px */
+--font-size-3xl: 1.875rem;      /* 30px */
+--font-size-4xl: 2.25rem;       /* 36px */
+--font-size-5xl: 3rem;          /* 48px */
+
+--breakpoint-mobile: 480px;
+--breakpoint-tablet: 768px;
+--breakpoint-desktop: 1024px;
+--breakpoint-large: 1280px;
+```
+
+## 🌐 URLs e Endpoints
+
+- **Desenvolvimento**: http://localhost:3000
+- **Rede local**: http://[SEU-IP]:3000 (ex: http://192.168.1.10:3000)
+- **Produção**: Configurar após deploy
+
+## 📝 Comandos Úteis do Terminal
+
+```bash
+# Verificar versões
+node -v
+npm -v
+
+# Navegar para o projeto
+cd "C:\Users\EXATAPC\Desktop\Exata Jhonatan\site-exatasis"
+
+# Instalar dependências
+npm install
+
+# Iniciar servidor
+npm run dev
+
+# Build de produção
+npm run build
+
+# Limpar e reinstalar
+Remove-Item -Recurse -Force node_modules, package-lock.json
+npm install
+
+# Ver processos na porta 3000 (Windows)
+Get-NetTCPConnection -LocalPort 3000
+
+# Matar processo na porta 3000 (Windows)
+Get-Process -Id (Get-NetTCPConnection -LocalPort 3000).OwningProcess | Stop-Process -Force
+
+# Abrir navegador manualmente
+Start-Process http://localhost:3000
+```
 
 ## 🎯 Funcionalidades
 

@@ -49,10 +49,10 @@
 .exata-360-image {
   /* COORDENADAS PARA AJUSTE DE TAMANHO */
   /* Para aumentar/diminuir o tamanho, ajuste estas propriedades: */
-  width: 400px;        /* Largura da imagem */
-  height: 400px;       /* Altura da imagem */
-  max-width: 500px;    /* Largura máxima */
-  max-height: 500px;   /* Altura máxima */
+  width: 560px;        /* Largura da imagem - aumentado 40% */
+  height: 560px;       /* Altura da imagem - aumentado 40% */
+  max-width: 700px;    /* Largura máxima - aumentado 40% */
+  max-height: 700px;   /* Altura máxima - aumentado 40% */
   
   object-fit: contain;
   filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.4));
@@ -78,10 +78,10 @@
   border-radius: var(--radius-lg);
   backdrop-filter: var(--glass-backdrop);
   -webkit-backdrop-filter: var(--glass-backdrop);
-  width: 400px;
-  height: 400px;
-  max-width: 500px;
-  max-height: 500px;
+  width: 560px;
+  height: 560px;
+  max-width: 700px;
+  max-height: 700px;
   animation: float 6s ease-in-out infinite;
 }
 
@@ -105,34 +105,34 @@
 /* Responsividade */
 @media (max-width: 1024px) {
   .exata-360-image {
-    width: 350px;
-    height: 350px;
-    max-width: 400px;
-    max-height: 400px;
+    width: 490px;    /* 350px * 1.4 */
+    height: 490px;
+    max-width: 560px; /* 400px * 1.4 */
+    max-height: 560px;
   }
   
   .exata-360-placeholder {
-    width: 350px;
-    height: 350px;
-    max-width: 400px;
-    max-height: 400px;
+    width: 490px;
+    height: 490px;
+    max-width: 560px;
+    max-height: 560px;
   }
   
 }
 
 @media (max-width: 768px) {
   .exata-360-image {
-    width: 300px;
-    height: 300px;
-    max-width: 350px;
-    max-height: 350px;
+    width: 420px;    /* 300px * 1.4 */
+    height: 420px;
+    max-width: 490px; /* 350px * 1.4 */
+    max-height: 490px;
   }
   
   .exata-360-placeholder {
-    width: 300px;
-    height: 300px;
-    max-width: 350px;
-    max-height: 350px;
+    width: 420px;
+    height: 420px;
+    max-width: 490px;
+    max-height: 490px;
   }
   
   .placeholder-text {
@@ -147,17 +147,17 @@
 
 @media (max-width: 480px) {
   .exata-360-image {
-    width: 250px;
-    height: 250px;
-    max-width: 300px;
-    max-height: 300px;
+    width: 350px;    /* 250px * 1.4 */
+    height: 350px;
+    max-width: 420px; /* 300px * 1.4 */
+    max-height: 420px;
   }
   
   .exata-360-placeholder {
-    width: 250px;
-    height: 250px;
-    max-width: 300px;
-    max-height: 300px;
+    width: 350px;
+    height: 350px;
+    max-width: 420px;
+    max-height: 420px;
     padding: var(--space-md);
   }
   

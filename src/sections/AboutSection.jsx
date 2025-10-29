@@ -1,7 +1,6 @@
 import React from 'react';
 import GlassCard from '../components/GlassCard';
 import SectionTitle from '../components/SectionTitle';
-import teamImage from '../assets/images/equipe-exata.jpeg';
 import './AboutSection.css';
 
 const AboutSection = () => {
@@ -62,7 +61,7 @@ const AboutSection = () => {
                 
                 <div className="team-image-container">
                   <img 
-                    src={teamImage} 
+                    src="/equipe-2.jpg" 
                     alt="Equipe Exata" 
                     className="team-image"
                     onError={(e) => {

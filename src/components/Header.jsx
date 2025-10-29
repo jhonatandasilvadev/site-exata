@@ -80,10 +80,15 @@ const Header = () => {
 
           {/* Botão de contato */}
           <div className="header__actions">
-            <button className="contact-button">
+            <a 
+              href="https://wa.me/5547304315886" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="contact-button"
+            >
               <span className="button-text">FALE CONOSCO</span>
               <span className="whatsapp-icon">📱</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

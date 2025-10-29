@@ -26,6 +26,12 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  padding-top: 50px; /* Compensar header fixo reduzido em 40% */
+}
+
+main {
+  position: relative;
+  z-index: 1;
 }
 
 /* Partículas flutuantes de fundo */
@@ -169,6 +175,10 @@ body::before {
 
 /* Mobile grande (576px - 767px) */
 @media (max-width: 767px) and (min-width: 576px) {
+  body {
+    padding-top: 80px;
+  }
+  
   .container {
     max-width: 540px;
     padding: 0 var(--space-sm);
@@ -181,6 +191,10 @@ body::before {
 
 /* Mobile (até 575px) */
 @media (max-width: 575px) {
+  body {
+    padding-top: 90px;
+  }
+  
   .container {
     max-width: 100%;
     padding: 0 var(--space-sm);

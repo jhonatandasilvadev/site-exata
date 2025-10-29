@@ -2,15 +2,9 @@ import React, { useState } from 'react';
 import './ExataImage.css';
 
 // Importar as imagens
-<<<<<<< HEAD
 import mainLogo from '../assets/images/tudo-sorte-logo.png';
 import headLogo from '../assets/images/exata-head.png';
 import footerLogo from '../assets/images/tudo-sorte-logo.png';
-=======
-import mainLogo from '../assets/images/exata-main-logo.png';
-import headLogo from '../assets/images/exata-head-logo.png';
-import footerLogo from '../assets/images/exata-footer-logo.png';
->>>>>>> 35dd788bbb4800fc52e118478d74319844cc5f77
 
 const ExataImage = ({ 
   type = 'main', 

@@ -11,7 +11,7 @@ const HeroSection = () => {
     { name: 'Assessoria Jurídica', link: 'assessoria-juridica.html' },
     { name: 'Municípios e Prefeituras', link: 'municipios.html' },
     { name: 'Cash Back', link: 'cash-back.html' },
-    { name: 'Gameficação', link: 'gameficacao.html' },
+    { name: 'Gamificação', link: 'gameficacao.html' },
     { name: 'Campanha de Pontos', link: 'campanha-pontos.html' },
     { name: 'Personalização de Campanhas', link: 'personalizacao-campanhas.html' }
   ];
@@ -23,7 +23,7 @@ const HeroSection = () => {
       'Assessoria Jurídica': publicPath('juridico.png'),
       'Municípios e Prefeituras': publicPath('prefeitura-municipio.png'),
       'Cash Back': publicPath('cash-back.png'),
-      'Gameficação': publicPath('gamefication.png'),
+      'Gamificação': publicPath('gamefication.png'),
       'Campanha de Pontos': publicPath('campanha-pontos.png'),
       'Personalização de Campanhas': publicPath('custom-campain.png')
     };

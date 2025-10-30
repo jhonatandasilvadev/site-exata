@@ -2,6 +2,11 @@
 
 Um site one-page moderno e responsivo desenvolvido em React com Vite, focado em glassmorphism e efeitos visuais metálicos verdes.
 
+## 🔗 Links do Projeto
+
+- Live: https://jhonatandasilvadev.github.io/site-exata/
+- Repositório: https://github.com/jhonatandasilvadev/site-exata
+
 ## 🚀 Características
 tudo aqui
 - **Design Moderno**: Estética glassmorphism com verde metálico escuro (#1a3d2f)
@@ -362,7 +367,7 @@ site-exatasis/
 
 - **Desenvolvimento**: http://localhost:3000
 - **Rede local**: http://[SEU-IP]:3000 (ex: http://192.168.1.10:3000)
-- **Produção**: Configurar após deploy
+- **Produção**: https://jhonatandasilvadev.github.io/site-exata/
 
 ## 📝 Comandos Úteis do Terminal
 

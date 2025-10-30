@@ -101,6 +101,13 @@ const Footer = () => {
           <p className="footer__copyright">
             Copyright © 2024 Todos os direitos reservados
           </p>
+          <p className="contact-item" style={{ marginTop: '8px' }}>
+            <strong>Projeto:</strong>
+            {' '}
+            <a href="https://jhonatandasilvadev.github.io/site-exata/" target="_blank" rel="noopener noreferrer">Live</a>
+            {' '}•{' '}
+            <a href="https://github.com/jhonatandasilvadev/site-exata" target="_blank" rel="noopener noreferrer">Repositório</a>
+          </p>
         </div>
       </div>
     </footer>

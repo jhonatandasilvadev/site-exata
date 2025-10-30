@@ -1,37 +1,38 @@
 import React, { useMemo } from 'react';
 import SectionTitle from '../components/SectionTitle';
+import { publicPath } from '../utils/publicPath';
 import './ClientsSection.css';
 
 const ClientsSection = () => {
   // Logos de clientes reais
   const clientLogos = [
-    { id: 1, name: 'ACIG', logo: '/acig-logo.png' },
-    { id: 2, name: 'ACIMA', logo: '/acima-logo.png' },
-    { id: 3, name: 'AEFW', logo: '/aefw-logo.png' },
-    { id: 4, name: 'Atacadão', logo: '/atacadao-logo.png' },
-    { id: 5, name: 'Bahamas', logo: '/bahamas-logo.png' },
-    { id: 6, name: 'Carazinho', logo: '/carazinho-logo.png' },
-    { id: 7, name: 'CDL NH', logo: '/cdlnh-logo.png' },
-    { id: 8, name: 'Comper', logo: '/comper-logo.png' },
-    { id: 9, name: 'Excellence', logo: '/excellence-logo.png' },
-    { id: 10, name: 'Farroupilha', logo: '/farroupilha-logo.png' },
-    { id: 11, name: 'Fort', logo: '/fort-logo.png' },
-    { id: 12, name: 'LAR', logo: '/lar-logo.png' },
-    { id: 13, name: 'Líder', logo: '/lider-logo.png' },
-    { id: 14, name: 'ACE', logo: '/logo-ace.png' },
-    { id: 15, name: 'OrganAct', logo: '/organact-logo.png' },
-    { id: 16, name: 'Sicoob', logo: '/sicoob-logo.png' },
-    { id: 17, name: 'Sicredi', logo: '/sicredi-logo.png' },
-    { id: 18, name: 'ACICAM', logo: '/acicam-logo.png' },
-    { id: 19, name: 'ACIFI', logo: '/acifi-logo.webp' },
-    { id: 20, name: 'CLD', logo: '/cld-logo.png' },
-    { id: 21, name: 'Copagril', logo: '/copagril-logo.png' },
-    { id: 22, name: 'Copasa', logo: '/copasa-logo.png' },
-    { id: 23, name: 'FACIAP', logo: '/faciap-logo.png' },
-    { id: 24, name: 'Hipermais', logo: '/hipermais-logo.png' },
-    { id: 25, name: 'LAR Foods', logo: '/lar-foods-logo.svg' },
-    { id: 26, name: 'Trajano', logo: '/TRAJANO-LOGO.png' },
-    { id: 27, name: 'Transamazônica', logo: '/transamazonica-logo.webp' }
+    { id: 1, name: 'ACIG', logo: publicPath('acig-logo.png') },
+    { id: 2, name: 'ACIMA', logo: publicPath('acima-logo.png') },
+    { id: 3, name: 'AEFW', logo: publicPath('aefw-logo.png') },
+    { id: 4, name: 'Atacadão', logo: publicPath('atacadao-logo.png') },
+    { id: 5, name: 'Bahamas', logo: publicPath('bahamas-logo.png') },
+    { id: 6, name: 'Carazinho', logo: publicPath('carazinho-logo.png') },
+    { id: 7, name: 'CDL NH', logo: publicPath('cdlnh-logo.png') },
+    { id: 8, name: 'Comper', logo: publicPath('comper-logo.png') },
+    { id: 9, name: 'Excellence', logo: publicPath('excellence-logo.png') },
+    { id: 10, name: 'Farroupilha', logo: publicPath('farroupilha-logo.png') },
+    { id: 11, name: 'Fort', logo: publicPath('fort-logo.png') },
+    { id: 12, name: 'LAR', logo: publicPath('lar-logo.png') },
+    { id: 13, name: 'Líder', logo: publicPath('lider-logo.png') },
+    { id: 14, name: 'ACE', logo: publicPath('logo-ace.png') },
+    { id: 15, name: 'OrganAct', logo: publicPath('organact-logo.png') },
+    { id: 16, name: 'Sicoob', logo: publicPath('sicoob-logo.png') },
+    { id: 17, name: 'Sicredi', logo: publicPath('sicredi-logo.png') },
+    { id: 18, name: 'ACICAM', logo: publicPath('acicam-logo.png') },
+    { id: 19, name: 'ACIFI', logo: publicPath('acifi-logo.webp') },
+    { id: 20, name: 'CLD', logo: publicPath('cld-logo.png') },
+    { id: 21, name: 'Copagril', logo: publicPath('copagril-logo.png') },
+    { id: 22, name: 'Copasa', logo: publicPath('copasa-logo.png') },
+    { id: 23, name: 'FACIAP', logo: publicPath('faciap-logo.png') },
+    { id: 24, name: 'Hipermais', logo: publicPath('hipermais-logo.png') },
+    { id: 25, name: 'LAR Foods', logo: publicPath('lar-foods-logo.svg') },
+    { id: 26, name: 'Trajano', logo: publicPath('TRAJANO-LOGO.png') },
+    { id: 27, name: 'Transamazônica', logo: publicPath('transamazonica-logo.webp') }
   ];
 
   // Dividir logos entre as 4 linhas sem repetição

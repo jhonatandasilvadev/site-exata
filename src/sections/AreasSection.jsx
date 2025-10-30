@@ -1,28 +1,29 @@
 import React from 'react';
 import GlassCard from '../components/GlassCard';
 import SectionTitle from '../components/SectionTitle';
+import { publicPath } from '../utils/publicPath';
 import './AreasSection.css';
 
 const AreasSection = () => {
   // Primeira linha: Supermercados, Varejo, Atacados
   const firstRow = [
-    { name: 'Supermercados', icon: '/mercado.png', isImage: true },
-    { name: 'Varejo', icon: '/varejo.png', isImage: true },
-    { name: 'Atacados', icon: '/atacado.png', isImage: true }
+    { name: 'Supermercados', icon: publicPath('mercado.png'), isImage: true },
+    { name: 'Varejo', icon: publicPath('varejo.png'), isImage: true },
+    { name: 'Atacados', icon: publicPath('atacado.png'), isImage: true }
   ];
 
   // Segunda linha: Congressos, Feiras de Eventos, Municípios e Prefeituras
   const secondRow = [
     { name: 'Congressos', icon: '🏛️' },
-    { name: 'Feiras de Eventos', icon: '/feiras.png?v=1', isImage: true },
-    { name: 'Municípios e Prefeituras', icon: '/prefeituras-e-municipios.png', isImage: true, link: 'municipios.html' }
+    { name: 'Feiras de Eventos', icon: publicPath('feiras.png?v=1'), isImage: true },
+    { name: 'Municípios e Prefeituras', icon: publicPath('prefeituras-e-municipios.png'), isImage: true, link: 'municipios.html' }
   ];
 
   // Terceira linha: ACE, CDL, Farmácias
   const thirdRow = [
-    { name: 'ACE', icon: '/logo-ace.png', isImage: true },
-    { name: 'CDL', icon: '/cdl.png', isImage: true },
-    { name: 'Farmácias', icon: '/farmacia.png', isImage: true }
+    { name: 'ACE', icon: publicPath('logo-ace.png'), isImage: true },
+    { name: 'CDL', icon: publicPath('cdl.png'), isImage: true },
+    { name: 'Farmácias', icon: publicPath('farmacia.png'), isImage: true }
   ];
 
   return (

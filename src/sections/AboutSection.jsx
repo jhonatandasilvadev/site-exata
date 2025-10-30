@@ -1,6 +1,7 @@
 import React from 'react';
 import GlassCard from '../components/GlassCard';
 import SectionTitle from '../components/SectionTitle';
+import { publicPath } from '../utils/publicPath';
 import './AboutSection.css';
 
 const AboutSection = () => {
@@ -61,7 +62,7 @@ const AboutSection = () => {
                 
                 <div className="team-image-container">
                   <img 
-                    src="/equipe-2.jpg" 
+                    src={publicPath('equipe-2.jpg')} 
                     alt="Equipe Exata" 
                     className="team-image"
                     onError={(e) => {

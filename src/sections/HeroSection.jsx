@@ -1,6 +1,7 @@
 import React from 'react';
 import GlassCard from '../components/GlassCard';
 import ExataImage from '../components/ExataImage';
+import { publicPath } from '../utils/publicPath';
 import './HeroSection.css';
 
 const HeroSection = () => {
@@ -17,14 +18,14 @@ const HeroSection = () => {
 
   const getServiceIcon = (serviceName) => {
     const imageMap = {
-      'Sorteios e Prêmios': '/premios-sorteios.png',
-      'Clube de Vantagens': '/clube-vantagens.png',
-      'Assessoria Jurídica': '/juridico.png',
-      'Municípios e Prefeituras': '/prefeitura-municipio.png',
-      'Cash Back': '/cash-back.png',
-      'Gameficação': '/gamefication.png',
-      'Campanha de Pontos': '/campanha-pontos.png',
-      'Personalização de Campanhas': '/custom-campain.png'
+      'Sorteios e Prêmios': publicPath('premios-sorteios.png'),
+      'Clube de Vantagens': publicPath('clube-vantagens.png'),
+      'Assessoria Jurídica': publicPath('juridico.png'),
+      'Municípios e Prefeituras': publicPath('prefeitura-municipio.png'),
+      'Cash Back': publicPath('cash-back.png'),
+      'Gameficação': publicPath('gamefication.png'),
+      'Campanha de Pontos': publicPath('campanha-pontos.png'),
+      'Personalização de Campanhas': publicPath('custom-campain.png')
     };
 
     const imageSrc = imageMap[serviceName];

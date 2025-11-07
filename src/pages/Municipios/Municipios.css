@@ -9,10 +9,10 @@
 .municipios-hero {
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-  padding: var(--space-xl) 0;
+  padding: var(--space-2xl) 0;
 }
 
 .municipios-hero .service-hero__content {
@@ -57,6 +57,22 @@
   font-weight: 600;
   margin-bottom: var(--space-md);
   font-style: italic;
+}
+
+/* Ajuste dos botões de ação - alinhamento */
+.municipios-hero .service-hero__actions {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: var(--space-2xl);
+}
+
+.municipios-hero .service-hero__actions .btn {
+  min-width: 220px;
+  padding: 1rem 2rem;
+  font-size: var(--font-size-base);
+  text-align: center;
 }
 
 .hero-badges {
@@ -135,10 +151,21 @@
 /* Apresentação - O que é a Campanha */
 .presentation {
   backdrop-filter: blur(10px);
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl) 0;
+}
+
+.presentation .service-section__title {
+  text-align: left;
+  margin-bottom: var(--space-md);
+}
+
+.presentation .service-section__subtitle {
+  text-align: left;
+  margin-left: 0;
+  margin-bottom: var(--space-xl);
 }
 
 .presentation-content {
@@ -212,19 +239,22 @@
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-xl);
+  gap: var(--space-lg);
+  align-items: stretch;
 }
 
 .icon-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: var(--space-sm);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   background: rgba(0, 255, 136, 0.05);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all var(--transition-normal);
+  min-height: 140px;
 }
 
 .icon-item:hover {
@@ -233,7 +263,7 @@
 }
 
 .icon-item .icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .icon-item .label {
@@ -245,10 +275,10 @@
 
 /* Steps - Como Participar */
 .steps {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .steps-grid {
@@ -326,10 +356,10 @@
 
 /* Benefícios */
 .benefits {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .benefits-grid {
@@ -419,10 +449,10 @@
 
 /* Premiação e Resultados */
 .results {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .prize-info {
@@ -533,10 +563,10 @@
 
 /* Notícias e Atualizações */
 .news {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .news-grid {
@@ -583,10 +613,10 @@
 .faq {
   background: rgba(26, 61, 47, 0.03);
   backdrop-filter: blur(10px);
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .faq-list {
@@ -637,10 +667,10 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 255, 136, 0.02));
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .cta-final::before {

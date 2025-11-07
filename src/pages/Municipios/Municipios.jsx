@@ -365,42 +365,6 @@ const Municipios = () => {
           </div>
         </section>
 
-        {/* Contato e Suporte */}
-        <section id="contato" className="service-section contact">
-          <div className="container">
-            <h2 className="service-section__title">Contato & Suporte</h2>
-            <p className="service-section__subtitle">
-              Estamos aqui para ajudar! Entre em contato conosco
-            </p>
-            <div className="contact-grid">
-              <div className="contact-card">
-                <div className="contact-icon">📞</div>
-                <h3>Telefone</h3>
-                <p>+55 47 3043-1586</p>
-                <span className="contact-hours">Seg à Sex: 8h às 18h</span>
-              </div>
-              <div className="contact-card">
-                <div className="contact-icon">📧</div>
-                <h3>E-mail</h3>
-                <p>contato@prefeitura.gov.br</p>
-                <span className="contact-hours">Resposta em até 24h</span>
-              </div>
-              <div className="contact-card">
-                <div className="contact-icon">💬</div>
-                <h3>WhatsApp</h3>
-                <p>+55 47 3043-1586</p>
-                <span className="contact-hours">Atendimento rápido</span>
-              </div>
-              <div className="contact-card">
-                <div className="contact-icon">🏛️</div>
-                <h3>Ouvidoria</h3>
-                <p>ouvidoria@prefeitura.gov.br</p>
-                <span className="contact-hours">Críticas e sugestões</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Final */}
         <section className="service-section cta-final">
           <div className="container">

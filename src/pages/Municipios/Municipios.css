@@ -9,16 +9,19 @@
 .municipios-hero {
   position: relative;
   overflow: hidden;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  padding: var(--space-xl) 0;
 }
 
 .municipios-hero .service-hero__content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
   align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .municipios-hero .service-hero__text {
@@ -132,6 +135,10 @@
 /* Apresentação - O que é a Campanha */
 .presentation {
   backdrop-filter: blur(10px);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2xl) 0;
 }
 
 .presentation-content {
@@ -237,24 +244,31 @@
 }
 
 /* Steps - Como Participar */
+.steps {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2xl) 0;
+}
+
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-2xl);
-  margin-top: var(--space-2xl);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
 }
 
 .step-card {
   background: rgba(26, 61, 47, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: var(--space-2xl);
+  padding: var(--space-xl) var(--space-lg);
   text-align: center;
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: all var(--transition-normal);
   position: relative;
-  padding-top: 3rem;
+  padding-top: 2.5rem;
 }
 
 .step-card:hover {
@@ -281,47 +295,55 @@
 }
 
 .step-icon {
-  font-size: 3rem;
-  margin-bottom: var(--space-md);
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
   display: block;
 }
 
 .step-card h3 {
   color: var(--color-accent);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: 600;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .step-card p {
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: var(--font-size-sm);
 }
 
 .steps-callout {
-  margin-top: var(--space-2xl);
-  padding: var(--space-xl);
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
   background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 136, 0.05));
   border: 2px solid var(--color-accent);
   border-radius: var(--radius-lg);
   text-align: center;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   color: var(--color-accent);
 }
 
 /* Benefícios */
+.benefits {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2xl) 0;
+}
+
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-2xl);
-  margin-top: var(--space-2xl);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
 }
 
 .benefit-card {
   background: rgba(26, 61, 47, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: var(--space-2xl);
+  padding: var(--space-lg);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: all var(--transition-normal);
@@ -336,17 +358,17 @@
 .benefit-header {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-xl);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
 .benefit-icon {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .benefit-card h3 {
   color: var(--color-accent);
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-lg);
   font-weight: 600;
   margin: 0;
 }
@@ -359,11 +381,12 @@
 
 .benefit-card li {
   color: var(--color-text-secondary);
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
-  padding-left: 2rem;
-  line-height: 1.6;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+  font-size: var(--font-size-sm);
 }
 
 .benefit-card li:last-child {
@@ -379,15 +402,15 @@
 }
 
 .impact-statement {
-  margin-top: var(--space-3xl);
-  padding: var(--space-2xl);
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
   background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 136, 0.05));
   border-radius: var(--radius-lg);
   text-align: center;
 }
 
 .impact-statement p {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-base);
   color: var(--color-accent);
   font-style: italic;
   font-weight: 600;
@@ -395,11 +418,18 @@
 }
 
 /* Premiação e Resultados */
+.results {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2xl) 0;
+}
+
 .prize-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-2xl);
-  margin-bottom: var(--space-3xl);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }
 
 .prize-card {
@@ -502,11 +532,18 @@
 }
 
 /* Notícias e Atualizações */
+.news {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2xl) 0;
+}
+
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-2xl);
-  margin-top: var(--space-2xl);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
 }
 
 .news-card {
@@ -546,6 +583,10 @@
 .faq {
   background: rgba(26, 61, 47, 0.03);
   backdrop-filter: blur(10px);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2xl) 0;
 }
 
 .faq-list {
@@ -590,60 +631,16 @@
   box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
 }
 
-/* Contato e Suporte */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-2xl);
-  margin-top: var(--space-2xl);
-}
-
-.contact-card {
-  background: rgba(26, 61, 47, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
-  padding: var(--space-2xl);
-  text-align: center;
-  backdrop-filter: blur(10px);
-  transition: all var(--transition-normal);
-}
-
-.contact-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--color-accent);
-  box-shadow: 0 8px 30px rgba(0, 255, 136, 0.2);
-}
-
-.contact-icon {
-  font-size: 3rem;
-  margin-bottom: var(--space-md);
-}
-
-.contact-card h3 {
-  color: var(--color-accent);
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--space-md);
-}
-
-.contact-card p {
-  color: var(--color-text-primary);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  margin-bottom: var(--space-sm);
-}
-
-.contact-hours {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  display: block;
-}
-
 /* CTA Final */
 .cta-final {
   text-align: center;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 255, 136, 0.02));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2xl) 0;
 }
 
 .cta-final::before {
@@ -753,18 +750,41 @@
   }
 
   .steps-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
   }
 
   .benefits-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
   }
 
   .results-grid {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .prize-info {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Ajusta altura para tablets */
+  .municipios-hero,
+  .presentation,
+  .steps,
+  .benefits,
+  .results,
+  .news,
+  .faq,
+  .cta-final {
+    min-height: auto;
+    padding: var(--space-3xl) 0;
   }
 }
 
@@ -789,9 +809,8 @@
   .step-card,
   .benefit-card,
   .prize-card,
-  .news-card,
-  .contact-card {
-    padding: var(--space-xl);
+  .news-card {
+    padding: var(--space-lg);
   }
 
   .cta-buttons {
@@ -818,14 +837,19 @@
   .seals-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .steps-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
 }
 
 @media (max-width: 480px) {
   .step-card,
   .benefit-card,
   .prize-card,
-  .news-card,
-  .contact-card {
+  .news-card {
     padding: var(--space-md);
   }
 
@@ -850,5 +874,18 @@
 
   .seals-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Remove min-height em mobile para evitar muito espaçamento */
+  .municipios-hero,
+  .presentation,
+  .steps,
+  .benefits,
+  .results,
+  .news,
+  .faq,
+  .cta-final {
+    min-height: auto;
+    padding: var(--space-2xl) 0;
   }
 }

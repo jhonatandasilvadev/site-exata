@@ -1,0 +1,159 @@
+.clients-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-3xl) 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 136, 0.02) 0%,
+    transparent 70%
+  );
+}
+
+.clients-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+/* Carrossel Container */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: var(--space-xs) 0;
+  
+  /* Gradientes nas bordas para efeito de fade */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* Track do carrossel */
+.carousel-track {
+  display: flex;
+  gap: var(--space-md);
+  animation: scroll 40s linear infinite;
+  width: fit-content;
+}
+
+/* Pausa ao hover */
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* Item do carrossel */
+.carousel-item {
+  flex-shrink: 0;
+  width: 180px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 255, 136, 0.3);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+/* Logo dentro do item */
+.carousel-logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0.95);
+  transition: all 0.3s ease;
+}
+
+.carousel-item:hover .carousel-logo {
+  filter: brightness(1.1);
+  transform: scale(1.1);
+}
+
+/* Animação de scroll infinito */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .carousel-item {
+    width: 160px;
+    height: 100px;
+  }
+  
+  .carousel-track {
+    gap: var(--space-sm);
+    animation-duration: 35s;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 140px;
+    height: 90px;
+    padding: var(--space-sm);
+  }
+  
+  .carousel-track {
+    gap: var(--space-sm);
+    animation-duration: 30s;
+  }
+  
+  .clients-section__content {
+    gap: var(--space-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    width: 120px;
+    height: 80px;
+    padding: var(--space-xs);
+  }
+  
+  .carousel-track {
+    gap: var(--space-xs);
+    animation-duration: 25s;
+  }
+  
+  .carousel-container {
+    padding: var(--space-xs) 0;
+  }
+  
+  .clients-section__content {
+    gap: var(--space-xs);
+  }
+}

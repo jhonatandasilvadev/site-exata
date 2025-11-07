@@ -1,0 +1,222 @@
+.footer {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 26, 46, 0.95) 0%,
+    rgba(22, 33, 62, 0.95) 25%,
+    rgba(30, 58, 95, 0.95) 50%,
+    rgba(45, 90, 135, 0.95) 75%,
+    rgba(26, 75, 115, 0.95) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(135, 206, 235, 0.2);
+  padding: calc(var(--space-lg) * 0.6) 0 calc(var(--space-md) * 0.6) 0;
+  position: relative;
+  z-index: 10;
+}
+
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: calc(var(--space-md) * 0.6);
+  gap: calc(var(--space-lg) * 0.6);
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-img {
+  height: 60px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.footer__main {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space-lg) * 0.6);
+  flex: 1;
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-xs) * 0.6);
+}
+
+.contact-item {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+.contact-item strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-item a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Cards de redes sociais */
+.social-cards {
+  display: flex;
+  gap: calc(var(--space-sm) * 0.6);
+  align-items: center;
+}
+
+.social-card {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--social-color);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50%;
+}
+
+.social-card:hover::before {
+  opacity: 0.2;
+}
+
+.social-card:hover {
+  transform: translateY(-3px) scale(1.1);
+  border-color: var(--social-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon {
+  font-size: 1.2rem;
+  z-index: 1;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.social-card:hover .social-icon {
+  transform: scale(1.2);
+}
+
+/* Footer bottom */
+.footer__bottom {
+  text-align: center;
+  padding-top: calc(var(--space-sm) * 0.6);
+  border-top: 1px solid rgba(135, 206, 235, 0.1);
+}
+
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--font-size-xs);
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer {
+    padding: calc(var(--space-md) * 0.6) 0 calc(var(--space-sm) * 0.6) 0;
+  }
+  
+  .footer__content {
+    flex-direction: column;
+    gap: calc(var(--space-md) * 0.6);
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer__logo {
+    order: -1;
+  }
+  
+  .footer-logo-img {
+    height: 50px;
+  }
+  
+  .footer__main {
+    flex-direction: column;
+    gap: calc(var(--space-sm) * 0.6);
+  }
+  
+  .social-cards {
+    gap: calc(var(--space-xs) * 0.6);
+  }
+  
+  .social-card {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .social-icon {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: calc(var(--space-sm) * 0.6) 0;
+  }
+  
+  .footer__content {
+    gap: calc(var(--space-sm) * 0.6);
+  }
+  
+  .footer-logo-img {
+    height: 40px;
+  }
+  
+  .social-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: calc(var(--space-xs) * 0.6);
+  }
+  
+  .social-card {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .social-icon {
+    font-size: 0.85rem;
+  }
+  
+  .contact-item {
+    font-size: var(--font-size-xs);
+  }
+}
+

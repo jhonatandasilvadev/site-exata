@@ -6,12 +6,6 @@
 
 /* Hero customizado */
 .municipios-hero {
-  background: linear-gradient(
-    135deg,
-    #1a3d2f 0%,
-    #2a5d3f 50%,
-    #0f2a1f 100%
-  );
   position: relative;
   overflow: hidden;
 }
@@ -70,7 +64,6 @@
 
 /* Apresentação */
 .presentation {
-  background: rgba(26, 61, 47, 0.1);
   backdrop-filter: blur(10px);
 }
 
@@ -384,12 +377,6 @@
 
 /* CTA Final */
 .cta-final {
-  background: linear-gradient(
-    135deg,
-    #0f2a1f 0%,
-    #1a3d2f 50%,
-    #2a5d3f 100%
-  );
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -402,7 +389,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(26, 61, 47, 0.1);
   backdrop-filter: blur(10px);
   z-index: 0;
 }

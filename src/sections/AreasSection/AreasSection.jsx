@@ -15,7 +15,7 @@ const AreasSection = () => {
 
   // Segunda linha: Congressos, Feiras de Eventos, Municípios e Prefeituras
   const secondRow = [
-    { name: 'Congressos', icon: '🏛️' },
+    { name: 'Congressos', icon: publicPath('congresso.png'), isImage: true },
     { name: 'Feiras de Eventos', icon: publicPath('feiras.png?v=1'), isImage: true },
     { name: 'Municípios e Prefeituras', icon: publicPath('prefeituras-e-municipios.png'), isImage: true, link: '/municipios' }
   ];
